@@ -1,0 +1,96 @@
+MDScreen :
+     name : "Main"
+     bot_name : bot_name
+     MDFloatLayout:
+          md_bg_color: 1, 2, 2, 1
+          Image:
+               source: "Bot3.png"
+               size_hint : 0.5 , 0.5
+               pos_hint:{"center_x":0.5,"center_y":0.8}
+
+
+          MDLabel:
+               text : "Hello sir !"
+               font_size : "35sp"
+               pos_hint : {"center_x":0.5,"center_y":0.58}
+               halign : "center"
+               theme_text_color : "Primary"
+               text_color :53/255 , 56/255 , 60/255
+
+
+
+          MDLabel:
+               text : "Here you can chat with the bot and start conversion with her/him "
+               font_size :"18sp"
+               
+               pos_hint:{"center_x":0.5,"center_y":0.45}    
+               halign:"center"
+               theme_text_color :"Hint"
+
+
+          MDFloatLayout:
+               size_hint: .85 , .08
+               pos_hint:{"center_x":0.5,"center_y":0.22}
+               canvas:
+
+
+                    Color: 
+                         rgb: (238/255 , 238/255 , 238/255 , 1)
+
+
+                    RoundedRectangle:
+                         size : self.size
+                         pos :self.pos
+                         radius: [22,22,22,22] 
+
+
+
+               TextInput:
+                    id : bot_name
+                    hint_text : "ChatBot name !"
+                    size_hint:1,None
+                    pos_hint:{"center_x":0.5,"center_y":0.5}
+                    font_size: "18sp"
+                    height: self.minimum_height
+                    cursor_color : 1,170/255 , 23/255 ,1
+                    foreground_color : 1,170/255 , 23/255 ,1
+                    background_color : 0,0,0,0
+                    padding: 15
+
+
+          MDFloatLayout:
+               size_hint: .45 , .08
+               pos_hint:{"center_x":0.5,"center_y":0.1}
+               canvas:
+
+
+                    Color: 
+                         rgb: ( 1,170/255 , 23/255 ,1)
+
+
+
+
+                    RoundedRectangle:
+                         size : self.size
+                         pos :self.pos
+                         radius: [22,22,22,22] 
+          Button:
+               text :""
+               size_hint:.45 , .88
+               pos_hint:{"center_x":.5,"center_y":.1}
+               background_color:0,0,0,0
+              
+               on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "Chats"
+
+          MDLabel:
+               text : "Let's chat"
+               halign:"center"
+               pos_hint:{"center_y": .1}
+               font_size:"18sp"
+               color:1,1,1,1  
+
+
+
+
